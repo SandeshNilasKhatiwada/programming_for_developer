@@ -1,4 +1,4 @@
-package setup;
+package com.example.social;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,9 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.sql.*;
 
 
-public class sceneSetup extends Application {
+public class SceneSetup extends Application {
     @Override
     public void start(Stage stage){
         Parent root ;
@@ -26,7 +27,11 @@ public class sceneSetup extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        DatabaseConnection DatabaseConnection = new DatabaseConnection();
+        Connection connection = DatabaseConnection.createConnection();
+        DatabaseConnection.createUserTableIfNotExists();
+
         launch();
     }
 }
