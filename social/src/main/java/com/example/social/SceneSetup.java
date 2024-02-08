@@ -8,11 +8,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.*;
 
-
 public class SceneSetup extends Application {
     @Override
-    public void start(Stage stage){
-        Parent root ;
+    public void start(Stage stage) {
+        Parent root;
 
         try {
             root = FXMLLoader.load(getClass().getResource("Login_page.fxml"));

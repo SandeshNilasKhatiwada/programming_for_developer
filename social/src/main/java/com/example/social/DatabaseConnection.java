@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseConnection {
-    private  static Connection connection = null;
+    private static Connection connection = null;
 
     public static Connection createConnection() throws SQLException {
         String PASSWORD = "admin";
@@ -16,6 +16,7 @@ public class DatabaseConnection {
         System.out.println("Connected To Database Successfully");
         return connection;
     }
+
     public void createUserTableIfNotExists() {
         String sql = "CREATE TABLE IF NOT EXISTS users ("
                 + "id INT AUTO_INCREMENT PRIMARY KEY,"
@@ -28,7 +29,8 @@ public class DatabaseConnection {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-}
+    }
+
     public void createEdgesTableIfNotExists() {
         String sql = "CREATE TABLE IF NOT EXISTS edges ("
                 + "id INT AUTO_INCREMENT PRIMARY KEY,"

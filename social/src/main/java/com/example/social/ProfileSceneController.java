@@ -6,7 +6,6 @@ import javafx.scene.text.Text;
 
 public class ProfileSceneController {
 
-    
     @FXML
     private Text logedInUserText;
 
@@ -14,7 +13,7 @@ public class ProfileSceneController {
     public void initialize() {
         // Change the text when the scene is loaded
         if (SessionManager.getCurrentUser() != null) {
-          logedInUserText.setText(SessionManager.getCurrentUser().getFullname());
+            logedInUserText.setText(SessionManager.getCurrentUser().getFullname());
         } else {
             System.out.println("SessionManager or currentUser is null");
         }

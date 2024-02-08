@@ -11,7 +11,7 @@ import java.util.Optional;
 import com.example.social.DatabaseConnection;
 
 public class UserService {
-Connection connection= null;
+    Connection connection = null;
 
     public void createUser(User user) throws SQLException {
         Connection connection = DatabaseConnection.createConnection();
@@ -26,6 +26,7 @@ Connection connection= null;
         }
         System.out.println("User Created");
     }
+
     public Optional<User> findByEmail(String email) throws SQLException {
         Connection connection = DatabaseConnection.createConnection();
         String query = "SELECT * FROM users WHERE email = ?";
@@ -36,8 +37,7 @@ Connection connection= null;
                     User user = new User(
                             resultSet.getString("fullname"),
                             resultSet.getString("email"),
-                            resultSet.getString("password")
-                    );
+                            resultSet.getString("password"));
                     return Optional.of(user);
                 }
             }
@@ -46,6 +46,7 @@ Connection connection= null;
         }
         return Optional.empty();
     }
+
     public List<User> findUsersWithSimilarName(String partialName) {
         List<User> users = new ArrayList<>();
         String sql = "SELECT * FROM users WHERE fullname LIKE ?";

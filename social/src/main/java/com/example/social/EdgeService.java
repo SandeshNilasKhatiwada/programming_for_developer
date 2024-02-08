@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-
 public class EdgeService {
     public void addEdge(int userId1, int userId2) throws SQLException {
         Connection connection = DatabaseConnection.createConnection();

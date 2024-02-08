@@ -1,9 +1,11 @@
 package com.example.social;
+
 public class SessionManager {
     private static SessionManager instance;
     private static User currentUser;
 
-    public SessionManager() {}
+    public SessionManager() {
+    }
 
     public static SessionManager getInstance() {
         if (instance == null) {
@@ -28,4 +30,3 @@ public class SessionManager {
         currentUser = null;
     }
 }
-
