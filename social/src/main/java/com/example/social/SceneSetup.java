@@ -31,6 +31,7 @@ public class SceneSetup extends Application {
         DatabaseConnection DatabaseConnection = new DatabaseConnection();
         Connection connection = DatabaseConnection.createConnection();
         DatabaseConnection.createUserTableIfNotExists();
+        DatabaseConnection.createEdgesTableIfNotExists();
 
         launch();
     }
